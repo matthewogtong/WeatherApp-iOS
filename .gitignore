@@ -21,9 +21,6 @@ DerivedData/
 timeline.xctimeline
 playground.xcworkspace
 
-# Config (API keys)
-Config.xcconfig
-
 # Swift Package Manager
 .build/
 Packages/
