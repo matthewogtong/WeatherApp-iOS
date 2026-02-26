@@ -16,32 +16,43 @@ struct ContentView: View {
                 HStack {
                     TextField("Enter city name", text: $viewModel.cityName)
                         .textFieldStyle(.roundedBorder)
+                        .autocorrectionDisabled()
                         .onSubmit {
                             viewModel.searchWeather()
                         }
 
-                    Button("Search") {
+                    Button {
                         viewModel.searchWeather()
+                    } label: {
+                        Image(systemName: "magnifyingglass")
                     }
                     .buttonStyle(.borderedProminent)
+                    .disabled(viewModel.cityName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 }
                 .padding(.horizontal)
 
                 if viewModel.isLoading {
                     Spacer()
-                    ProgressView("Loading...")
+                    ProgressView("Fetching weather...")
                     Spacer()
                 } else if let weather = viewModel.weather {
                     weatherView(weather)
                     Spacer()
                 } else if let error = viewModel.errorMessage {
                     Spacer()
-                    Text(error)
-                        .foregroundStyle(.red)
-                        .multilineTextAlignment(.center)
-                        .padding()
+                    ContentUnavailableView {
+                        Label("Error", systemImage: "exclamationmark.triangle")
+                    } description: {
+                        Text(error)
+                    }
                     Spacer()
                 } else {
+                    Spacer()
+                    ContentUnavailableView {
+                        Label("Search for a City", systemImage: "magnifyingglass")
+                    } description: {
+                        Text("Enter a city name above to see the current weather.")
+                    }
                     Spacer()
                 }
             }
@@ -56,6 +67,16 @@ struct ContentView: View {
                 .fontWeight(.bold)
 
             if let condition = weather.weather.first {
+                AsyncImage(url: URL(string: "https://openweathermap.org/img/wn/\(condition.icon)@2x.png")) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                } placeholder: {
+                    ProgressView()
+                        .frame(width: 100, height: 100)
+                }
+
                 Text(condition.description.capitalized)
                     .font(.title2)
                     .foregroundStyle(.secondary)
