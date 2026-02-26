@@ -27,6 +27,7 @@
 		FE3B3DD02F50C399009D00D6 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3B3DDD2F50C39B009D00D6 /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3B3DE72F50C39B009D00D6 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE3B3DFA2F50C39B009D00D6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +76,7 @@
 		FE3B3DC72F50C399009D00D6 = {
 			isa = PBXGroup;
 			children = (
+				FE3B3DFA2F50C39B009D00D6 /* Config.xcconfig */,
 				FE3B3DD22F50C399009D00D6 /* WeatherApp */,
 				FE3B3DE02F50C39B009D00D6 /* WeatherAppTests */,
 				FE3B3DEA2F50C39B009D00D6 /* WeatherAppUITests */,
@@ -271,6 +273,7 @@
 /* Begin XCBuildConfiguration section */
 		FE3B3DEF2F50C39B009D00D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3B3DFA2F50C39B009D00D6 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -335,6 +338,7 @@
 		};
 		FE3B3DF02F50C39B009D00D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE3B3DFA2F50C39B009D00D6 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -400,6 +404,7 @@
 				DEVELOPMENT_TEAM = V2U4YQPV4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -432,6 +437,7 @@
 				DEVELOPMENT_TEAM = V2U4YQPV4D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
